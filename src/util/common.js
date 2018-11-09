@@ -37,7 +37,24 @@ export function stringInclues(str, substr) {
 }
 
 export function parseDate(date) {
+    console.log(date);
     var splittedDate = date.split("-");
 
-    return new Date(splittedDate[0], splittedDate[1], splittedDate[2])
+    return new Date(splittedDate[0], splittedDate[2], splittedDate[1])
+}
+
+export function dateToString(date) {
+    var dd = date.getDate();
+    var mm = date.getMonth()+1; //January is 0!
+    var yyyy = date.getFullYear();
+
+    if(dd<10) {
+        dd = '0'+dd
+    }
+
+    if(mm<10) {
+        mm = '0'+mm
+    }
+
+    return mm + '/' + dd + '/' + yyyy;
 }

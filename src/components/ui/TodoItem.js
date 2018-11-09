@@ -1,11 +1,12 @@
 import React from 'react';
 import CheckBox from './CheckBox';
+import {dateToString} from '../../util/common'
 
 export default function TodoItem(props) {
     const {data, changeStatus} = props;
     const handleChange = (checked) => changeStatus(data.id, checked);
     const className = 'todo-item ui-state-default ' + (data.completed === true ? 'completed' : 'pending');
-    const date = data.finishDate.getFullYear() + "/" + data.finishDate.getMonth() + "/" + data.finishDate.getDay();
+    const date = dateToString(data.finishDate);
 
     return (
         <li className={className}>

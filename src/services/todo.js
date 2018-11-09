@@ -10,19 +10,19 @@ export function getAll() {
             id: 1,
             text: 'Learn Javascript',
             completed: false,
-            finishDate: new Date(2018, 9, 30)
+            finishDate: new Date()
         },
         {
             id: 2,
             text: 'Learn React',
             completed: false,
-            finishDate: new Date(2018, 9, 29)
+            finishDate: new Date(2018, 2, 29)
         },
         {
             id: 3,
             text: 'Build a React App',
             completed: false,
-            finishDate: new Date(2018, 9, 28)
+            finishDate: new Date(2018, 3, 28)
         }
     ]
 }

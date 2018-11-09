@@ -3,6 +3,7 @@ import {stringInclues} from '../util/common';
 export const FILTER_ALL = 'all';
 export const FILTER_ACTIVE = 'active';
 export const FILTER_COMPLETED = 'completed';
+export const FILTER_TODAY = 'today';
 
 export function applyFilter(list, filter) {
     switch (filter) {
@@ -21,8 +22,12 @@ export function filterByDate(list, date) {
     if(!date.fromDate || !date.toDate) {
         return list;
     }
+    console.log(list[0]);
+    console.log(list[0].date);
+    console.log(list[0].finishDate);
+    console.log(date);
 
-    return list.filter(item => item.date >= date.fromDate && item.date <= date.toDate);
+    return list.filter(item => item.finishDate >= date.fromDate && item.finishDate <= date.toDate);
 }
 
 export function search(list, query) {
@@ -36,6 +41,7 @@ export function getOptions() {
     return {
         [FILTER_ALL]: 'All',
         [FILTER_ACTIVE]: 'Active',
-        [FILTER_COMPLETED]: 'Completed'
+        [FILTER_COMPLETED]: 'Completed',
+        [FILTER_TODAY]: 'Today'
     };
 }
