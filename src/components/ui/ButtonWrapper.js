@@ -15,8 +15,8 @@ export default function ButtonWrapper(props) {
             <a title="Search"
                className={'button search ' + (isSearchMode() ? 'selected' : '')}
                onClick={() => changeMode(isSearchMode() ? MODE_NONE : MODE_SEARCH)}/>
-            <a title="Sort"
-               className={'button sort ' + (isSortDateMode() ? 'selected' : '')}
+            <a title="Sort By Date"
+               className={'button date ' + (isSortDateMode() ? 'selected' : '')}
                onClick={() => changeMode(isSortDateMode() ? MODE_NONE : MODE_SORT_DATE)}/>
         </div>
     );

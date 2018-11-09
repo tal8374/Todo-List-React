@@ -116,8 +116,8 @@ footer .buttons {
     background: url(../images/search.svg) no-repeat center;
 }
 
-.buttons .sort {
-    background: url(../images/sort.svg) no-repeat center;
+.buttons .date {
+    background: url(../images/date.svg) no-repeat center;
 }
 
 .alert.alert-info {
