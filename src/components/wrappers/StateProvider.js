@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {FILTER_ALL} from '../../services/filter';
 import {MODE_CREATE, MODE_NONE} from '../../services/mode';
-import {objectWithOnly, wrapChildrenWith} from '../../util/common';
+import {objectWithOnly, wrapChildrenWith, parseDate} from '../../util/common';
 import {getAll, addToList, updateStatus} from '../../services/todo';
 
 class StateProvider extends Component {
@@ -11,14 +11,16 @@ class StateProvider extends Component {
             query: '',
             mode: MODE_CREATE,
             filter: FILTER_ALL,
-            list: getAll()
+            list: getAll(),
+            date: {}
         }
     }
 
     render() {
         let children = wrapChildrenWith(this.props.children, {
             data: this.state,
-            actions: objectWithOnly(this, ['addNew', 'changeFilter', 'changeStatus', 'changeMode', 'setSearchQuery'])
+            actions: objectWithOnly(this, ['addNew', 'changeFilter', 'changeStatus', 'changeMode',
+                'setSearchQuery', 'setFromDate', 'setToDate'])
         });
 
         return <div>{children}</div>;
@@ -46,6 +48,28 @@ class StateProvider extends Component {
 
     setSearchQuery(text) {
         this.setState({query: text || ''});
+    }
+
+    setFromDate(fromDate) {
+        fromDate = parseDate(fromDate);
+        var toDate = this.state.date.toDate;
+        var date = {
+            toDate,
+            fromDate
+        };
+
+        this.setState({date: date});
+    }
+
+    setToDate(toDate) {
+        toDate = parseDate(toDate);
+        var fromDate = this.state.date.fromDate;
+        var date = {
+            toDate,
+            fromDate
+        };
+
+        this.setState({date: date});
     }
 }
 

@@ -35,3 +35,9 @@ export function wrapChildrenWith(children, props) {
 export function stringInclues(str, substr) {
     return str.indexOf(substr) !== -1;
 }
+
+export function parseDate(date) {
+    var splittedDate = date.split("-");
+
+    return new Date(splittedDate[0], splittedDate[1], splittedDate[2])
+}

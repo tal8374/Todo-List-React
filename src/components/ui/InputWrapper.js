@@ -5,7 +5,7 @@ import SortDateBox from './SortDateBox';
 import {MODE_SEARCH, MODE_CREATE, MODE_SORT_DATE} from '../../services/mode';
 
 export default function InputWrapper(props) {
-    const {mode, addNew, query, setSearchQuery} = props;
+    const {mode, addNew, query, setSearchQuery, setFromDate, setToDate} = props;
 
     switch (mode) {
         case MODE_CREATE:
@@ -15,7 +15,7 @@ export default function InputWrapper(props) {
             return <SearchBox {...{query, setSearchQuery}}/>;
 
         case MODE_SORT_DATE:
-            return <SortDateBox {...{query, setSearchQuery}}/>;
+            return <SortDateBox {...{setFromDate, setToDate}}/>;
 
         default:
             return null;
