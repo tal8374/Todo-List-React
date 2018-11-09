@@ -13,19 +13,26 @@ export function applyFilter(list, filter) {
         case FILTER_ACTIVE:
             return list.filter(item => item.completed !== true);
 
+        case FILTER_TODAY:
+            return list.filter(isTodaysTodo);
+
         default:
             return list;
     }
 }
 
+function isTodaysTodo(todo) {
+    var today = new Date();
+
+    return todo.finishDate.getDate() === today.getDate() &&
+        todo.finishDate.getMonth() === today.getMonth() &&
+        todo.finishDate.getFullYear() === today.getFullYear();
+}
+
 export function filterByDate(list, date) {
-    if(!date.fromDate || !date.toDate) {
+    if (!date.fromDate || !date.toDate) {
         return list;
     }
-    console.log(list[0]);
-    console.log(list[0].date);
-    console.log(list[0].finishDate);
-    console.log(date);
 
     return list.filter(item => item.finishDate >= date.fromDate && item.finishDate <= date.toDate);
 }

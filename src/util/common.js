@@ -37,7 +37,6 @@ export function stringInclues(str, substr) {
 }
 
 export function parseDate(date) {
-    console.log(date);
     var splittedDate = date.split("-");
 
     return new Date(splittedDate[0], splittedDate[2], splittedDate[1])
