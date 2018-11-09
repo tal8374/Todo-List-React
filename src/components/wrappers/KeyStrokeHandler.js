@@ -17,6 +17,7 @@ class KeyStrokeHandler extends Component {
 
         if (nextMode !== mode) {
             e.preventDefault();
+            console.log(nextMode);
             this.props.actions.changeMode(nextMode);
         }
     }

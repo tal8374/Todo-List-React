@@ -1,4 +1,4 @@
-import {KEY_SLASH, KEY_N, KEY_ESCAPE} from 'keycode-js';
+import {KEY_SLASH, KEY_N, KEY_ESCAPE, KEY_D} from 'keycode-js';
 
 export const MODE_NONE = 'none';
 export const MODE_SEARCH = 'search';
@@ -10,6 +10,7 @@ export function getNextModeByKey(current, keyPressed) {
         case MODE_NONE:
             if (keyPressed === KEY_SLASH) return MODE_SEARCH;
             if (keyPressed === KEY_N) return MODE_CREATE;
+            if (keyPressed === KEY_D) return MODE_SORT_DATE;
 
             break;
 

@@ -18,13 +18,10 @@ export function applyFilter(list, filter) {
 }
 
 export function filterByDate(list, date) {
-    console.log(1);
     if(!date.fromDate || !date.toDate) {
         return list;
     }
-    console.log(2);
 
-    // list.filter(item => false);
     return list.filter(item => item.date >= date.fromDate && item.date <= date.toDate);
 }
 
