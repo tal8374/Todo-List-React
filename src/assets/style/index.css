@@ -120,6 +120,15 @@ footer .buttons {
     background: url(../images/date.svg) no-repeat center;
 }
 
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.rightSpace {
+    margin: 0 10px 0 0;
+}
+
 .alert.alert-info {
     margin: 10px 0;
     padding: 10px;
