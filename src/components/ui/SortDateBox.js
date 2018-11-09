@@ -1,9 +1,9 @@
 import React from 'react';
+import enhance from '../hoc/wrapInputBox';
+import classes from "./SortDateBox.css";
 
-import classes from './SortBox.css'
-
-export default function SortBox(props) {
-    const {query, setSearchQuery} = props;
+function SortDateBox(props) {
+    const { value, handleChange, handleKeyUp } = props;
 
     return (
         <div className={classes.row}>
@@ -14,3 +14,5 @@ export default function SortBox(props) {
         </div>
     );
 }
+
+export default enhance(SortDateBox);

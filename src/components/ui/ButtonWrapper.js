@@ -1,11 +1,11 @@
 import React from 'react';
-import {MODE_NONE, MODE_CREATE, MODE_SEARCH, MODE_SORT} from '../../services/mode';
+import {MODE_NONE, MODE_CREATE, MODE_SEARCH, MODE_SORT_DATE} from '../../services/mode';
 
 export default function ButtonWrapper(props) {
     const {mode, changeMode} = props;
     const isCreateMode = () => mode === MODE_CREATE;
     const isSearchMode = () => mode === MODE_SEARCH;
-    const isSortMode = () => mode === MODE_SORT;
+    const isSortDateMode = () => mode === MODE_SORT_DATE;
 
     return (
         <div>
@@ -16,8 +16,8 @@ export default function ButtonWrapper(props) {
                className={'button search ' + (isSearchMode() ? 'selected' : '')}
                onClick={() => changeMode(isSearchMode() ? MODE_NONE : MODE_SEARCH)}/>
             <a title="Sort"
-               className={'button sort ' + (isSortMode() ? 'selected' : '')}
-               onClick={() => changeMode(isSortMode() ? MODE_NONE : MODE_SORT)}/>
+               className={'button sort ' + (isSortDateMode() ? 'selected' : '')}
+               onClick={() => changeMode(isSortDateMode() ? MODE_NONE : MODE_SORT_DATE)}/>
         </div>
     );
 }
