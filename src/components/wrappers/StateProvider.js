@@ -26,8 +26,11 @@ class StateProvider extends Component {
         return <div>{children}</div>;
     }
 
-    addNew(text) {
-        let updatedList = addToList(this.state.list, {text, completed: false});
+    addNew(payload) {
+        var text = payload.text;
+        var finishDate = payload.finishDate;
+
+        let updatedList = addToList(this.state.list, {text, finishDate, completed: false});
 
         this.setState({list: updatedList});
     }

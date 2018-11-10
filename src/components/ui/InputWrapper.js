@@ -1,5 +1,5 @@
 import React from 'react';
-import InputBox from './InputBox';
+import CreateBox from './createBox';
 import SearchBox from './SearchBox';
 import SortDateBox from './SortDateBox';
 import {MODE_SEARCH, MODE_CREATE, MODE_SORT_DATE} from '../../services/mode';
@@ -9,7 +9,7 @@ export default function InputWrapper(props) {
 
     switch (mode) {
         case MODE_CREATE:
-            return <InputBox {...{addNew}}/>;
+            return <CreateBox {...{addNew}}/>;
 
         case MODE_SEARCH:
             return <SearchBox {...{query, setSearchQuery}}/>;
